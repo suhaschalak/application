@@ -88,7 +88,7 @@ st.markdown(
 )
 
 # Sidebar with image and description
-st.sidebar.image('image.png',use_column_width=True)
+st.sidebar.image('image.png',caption="Dermatrix",use_column_width=True)
 st.sidebar.markdown(
     "<div class='sidebar-text'>Accurate detection of skin diseases with remedies suggestions to help manage them effectively.</div>",
     unsafe_allow_html=True
