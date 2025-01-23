@@ -6,7 +6,7 @@ import numpy as np
 from PIL import Image
 
 # Load the trained model
-MODEL_PATH = 'C:/python2025/Internship_projects/project1/Xception_best_model.keras'
+MODEL_PATH = 'mbNetV2model2(1).keras'
 model = load_model(MODEL_PATH)
 
 # Define class labels and remedies
@@ -38,7 +38,7 @@ def predict_disease(image):
 
 
 # Sidebar with image and description
-st.sidebar.image('C:/python2025/Internship_projects/project1/image.png', caption="Dermatrix",use_column_width=True)
+st.sidebar.image('image.png', caption="Dermatrix",use_column_width=True)
 st.sidebar.markdown(
     "<div class='sidebar-text'>Accurate detection of skin diseases with remedies suggestions to help manage them effectively.</div>",
     unsafe_allow_html=True
