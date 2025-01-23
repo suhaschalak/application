@@ -6,7 +6,7 @@ import numpy as np
 from PIL import Image
 
 # Load the trained model
-MODEL_PATH = 'C:/Users/chala/project/New4/mbNetV2model2 (1).keras'
+MODEL_PATH = 'project/New4/mbNetV2model2 (1).keras'
 model = load_model(MODEL_PATH)
 
 # Define class labels and remedies
@@ -88,7 +88,7 @@ st.markdown(
 )
 
 # Sidebar with image and description
-st.sidebar.image('image.png',caption="Dermatrix",use_column_width=True)
+st.sidebar.image('project/New4/image.png',caption="Dermatrix",use_column_width=True)
 st.sidebar.markdown(
     "<div class='sidebar-text'>Accurate detection of skin diseases with remedies suggestions to help manage them effectively.</div>",
     unsafe_allow_html=True
