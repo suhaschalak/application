@@ -20,7 +20,7 @@ REMEDIES = {
 	}
 
 # Function to preprocess image
-def preprocess_image(image, target_size=(299, 299)):
+def preprocess_image(image, target_size=(224, 224)):
 	image = image.resize(target_size)
 	image = img_to_array(image)
 	image = np.expand_dims(image, axis=0)
@@ -35,7 +35,57 @@ def predict_disease(image):
 	confidence = np.max(predictions)
 	return CLASS_LABELS[predicted_class], confidence
 
-
+# Streamlit UI
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #f9f9f9;
+        color: #333333;
+    }
+    .stButton > button {
+        margin: auto;
+        display: block;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .stButton > button:hover {
+        background-color: #45a049;
+    }
+    .title {
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #4CAF50;
+    }
+    .subtitle {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #555555;
+    }
+    .sidebar-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+    .sidebar-text {
+        text-align: center;
+        font-size: 16px;
+        color: #333333;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # Sidebar with image and description
 st.sidebar.image('project/New4/image.png', caption="Dermatrix",use_column_width=True)
